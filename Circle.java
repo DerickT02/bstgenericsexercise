@@ -1,3 +1,5 @@
+// Circle.java - A shape class that provides methods relating to a circle object, including an area calculation method
+// CSC 130, Fall 2024
 public class Circle extends Shape implements Comparable<Shape>{
     //Circle that takes in the radius which allows us to compute the area
     //Implements Comparable to allow for easy comparisons 
@@ -17,19 +19,13 @@ public class Circle extends Shape implements Comparable<Shape>{
 
     //Overridden toString method from abstract class
     public String toString(){
-        return String.format("Circle with radius %f", radius);
+        return String.format("Circle with radius %.1f and area %.1f\n", radius, area());
     }
 
     //Overriden compareTo method that compares the area of this circle to other shapes
     @Override
     public int compareTo(Shape otherShape){
-        if(this.area < otherShape.area()){
-            return -1;
-        }
-        if(this.area == otherShape.area()){
-            return 0;
-        }
-
-        return 1;
+        int areaDifference = (int)this.area() - (int)otherShape.area();
+         return areaDifference;
     }
 }

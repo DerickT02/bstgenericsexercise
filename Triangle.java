@@ -1,3 +1,5 @@
+// Triangle.java - A shape class that provides methods relating to a triangle object, including an area calculation method
+// CSC 130, Fall 2024
 public class Triangle extends Shape implements Comparable<Shape>{
     //Triangle class that takes in the base and height
     private double base;
@@ -18,18 +20,12 @@ public class Triangle extends Shape implements Comparable<Shape>{
     }
     //Overridden toString method from abstract class
     public String toString(){
-        return String.format("Triangle with base %f and height %f ", base, height);
+        return String.format("Triangle with base %.1f and height %.1f ", base, height);
     }
     //Overriden compareTo method that compares the area of this triangle to other shapes
     @Override
     public int compareTo(Shape otherShape){
-        if(this.area < otherShape.area()){
-            return -1;
-        }
-        if(this.area == otherShape.area()){
-            return 0;
-        }
-
-        return 1;
+        int areaDifference = (int)this.area() - (int)otherShape.area();
+        return areaDifference;
     }
 }

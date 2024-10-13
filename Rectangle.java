@@ -1,3 +1,5 @@
+// Rectangle.java - A shape class that provides methods relating to a rectangle object, including an area calculation method
+// CSC 130, Fall 2024
 public class Rectangle extends Shape implements Comparable<Shape>{
     //Rectangle class that takes in a length and height to calculate the area
     private double length;
@@ -23,19 +25,12 @@ public class Rectangle extends Shape implements Comparable<Shape>{
     }
     //Overridden toString method from abstract class
     public String toString(){
-        return String.format("Rectangle with length %f and height %f",length, height);
+        return String.format("Rectangle with length %.1f and height %.1f",length, height);
     }
-
     //Overriden compareTo method that compares the area of this rectangle to other shapes
     @Override
     public int compareTo(Shape otherShape){
-        if(this.area < otherShape.area()){
-            return -1;
-        }
-        if(this.area == otherShape.area()){
-            return 0;
-        }
-
-        return 1;
+        int areaDifference = (int)this.area() - (int)otherShape.area();
+        return areaDifference;
     }
 }
