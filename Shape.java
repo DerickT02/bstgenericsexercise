@@ -1,5 +1,5 @@
-//Abstract class that has shape and toString override method
-
+//Shape.java - Abstract class that has shape and toString override method
+// CSC 130, Fall 2024
 public abstract class Shape{
    private String name;
 

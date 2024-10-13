@@ -1,3 +1,5 @@
+// Square.java - A shape class that provides methods relating to a square object, including an area calculation method
+// CSC 130, Fall 2024
 public class Square extends Rectangle{
     //Takes in the side and comparable interface from the rectangle operator
     private double area;
@@ -12,17 +14,15 @@ public class Square extends Rectangle{
         this.area = Math.pow(getLength(), 2.0);
         return this.area;
     }
+    //Overridden toString method from abstract class
+    public String toString(){
+        return String.format("Square with length %.1f and area %.1f", getLength(), area());
+    }
     //Overriden compareTo method that compares the area of this square to other shapes
     @Override
     public int compareTo(Shape otherShape){
-        if(this.area < otherShape.area()){
-            return -1;
-        }
-        if(this.area == otherShape.area()){
-            return 0;
-        }
-
-        return 1;
+        int areaDifference = (int)this.area() - (int)otherShape.area();
+        return areaDifference;
     }
 
 
